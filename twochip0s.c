@@ -1,0 +1,38 @@
+#include <stdint.h>
+#include <stdbool.h>
+#include "spi23x640/spi23x640.c"
+
+uint16_t img_write2() {
+
+    spi23x640_init(5000000);
+	uint16_t address_idx;
+	for (address_idx = 0; address_idx <= SPI23X640_MAX_ADDRESS; address_idx++) {
+		//printf("%x\n", address_idx);
+		uint8_t next_value = 0x00;
+		spi23x640_write_byte(address_idx, next_value);
+
+		//printf("Writing value %04" PRIx16 "\n", next_value);
+
+	}	
+    spi23x640_close();
+    printf("Done Writing all 0s to Chip 1.");
+    spi23x640_init2(5000000);
+    for (address_idx = 0; address_idx <= SPI23X640_MAX_ADDRESS; address_idx++) {
+		//printf("%x\n", address_idx);
+		uint8_t next_value = 0x00;
+		spi23x640_write_byte(address_idx, next_value);
+
+		//printf("Writing value %04" PRIx16 "\n", next_value);
+
+	}	
+    spi23x640_close2();
+    printf("Done Writing all 0s to Chip 2.");
+    return 0;
+}
+
+int main()
+{
+    if (img_write2() != 0)  {
+        printf("Error: image not written.");
+    }
+}
