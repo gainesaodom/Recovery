@@ -48,9 +48,6 @@ uint16_t img_write2() {
 		//printf("%x\n", address_idx);
 		uint8_t next_value = csv_data[address_idx];
 		spi23x640_write_byte(address_idx, next_value);
-
-		//printf("Writing value %04" PRIx16 "\n", next_value);
-
 	}	
     spi23x640_close();
     printf("Done Writing Image to Chip 1.\n");
@@ -59,9 +56,6 @@ uint16_t img_write2() {
 		//printf("%x\n", address_idx);
 		uint8_t next_value = csv_data[address_idx];
 		spi23x640_write_byte(address_idx, next_value);
-
-		//printf("Writing value %04" PRIx16 "\n", next_value);
-
 	}	
     spi23x640_close2();
     printf("Done Writing Image to Chip 2.\n");
