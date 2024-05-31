@@ -5,7 +5,7 @@
 uint16_t img_write2() {
 
     uint8_t csv_data[8192];
-    FILE *file =fopen("binary_image_hex.csv", "r");
+    FILE *file =fopen("Aubie.csv", "r");
 
     if (file == NULL) {
         perror("Error opening file");
