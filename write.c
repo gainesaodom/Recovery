@@ -53,7 +53,7 @@ uint16_t img_write2() {
 
 	}	
     spi23x640_close();
-    printf("Done Writing Image to Chip 1.");
+    printf("Done Writing Image to Chip 1.\n");
     spi23x640_init2(5000000);
     for (address_idx = 0; address_idx <= SPI23X640_MAX_ADDRESS; address_idx++) {
 		//printf("%x\n", address_idx);
@@ -64,7 +64,7 @@ uint16_t img_write2() {
 
 	}	
     spi23x640_close2();
-    printf("Done Writing Image to Chip 2.");
+    printf("Done Writing Image to Chip 2.\n");
     return 0;
 }
 
